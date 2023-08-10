@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Animator _handAnimator;
     [SerializeField] private Transform _rightArm;
     [SerializeField] private Transform _leftArm;
+    [SerializeField] private float _animationSpeedMultiplier = 2f;
 
     private Inventory _inventory;
     private Spell _spell;
@@ -28,12 +29,12 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnEnable()
     {
-        _inventory.SpellChosen += ChangeSpell;
+        _inventory.SpellChosen += OnChangeSpell;
     }
 
     private void OnDisable()
     {
-        _inventory.SpellChosen -= ChangeSpell;
+        _inventory.SpellChosen -= OnChangeSpell;
     }
 
     private void Update()
@@ -50,7 +51,7 @@ public class PlayerAttack : MonoBehaviour
         enabled = true;
     }
 
-    public void ChangeSpell(int index)
+    public void OnChangeSpell(int index)
     {
         _spell = _inventory.Spells[index];
     }
@@ -58,7 +59,7 @@ public class PlayerAttack : MonoBehaviour
     private void StartAttack()
     {
         _attack = StartCoroutine(Attack());
-        _handAnimator.speed = _spell.AttackSpeed / (1f / 2f);
+        _handAnimator.speed = _spell.AttackSpeed * _animationSpeedMultiplier;
     }
 
     private void StopAttack()

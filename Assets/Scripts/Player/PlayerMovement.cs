@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private Animator _animator;
 
     private DirectionButton[] _directionButtons;
-    private Vector3 _startDirection;
     private Vector3 _currentDirection;
     private UnityAction _directionChanged;
 
@@ -24,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
-        _startDirection = _bodyAnimated.forward;
         _directionButtons = new DirectionButton[]
         {
             new DirectionButton("Up", _up, transform.forward),
@@ -97,18 +95,4 @@ public class PlayerMovement : MonoBehaviour
             _stopped.Invoke();
         }
     }
-}
-
-public class DirectionButton
-{
-    public DirectionButton(string directionName, KeyCode keyCode, Vector3 direction)
-    {
-        DirectionName = directionName;
-        KeyCode = keyCode;
-        Direction = direction;
-    }
-
-    public string DirectionName { get; private set; }
-    public KeyCode KeyCode { get; private set; }
-    public Vector3 Direction { get; private set; }
 }

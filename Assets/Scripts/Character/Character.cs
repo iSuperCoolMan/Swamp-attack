@@ -14,14 +14,14 @@ public abstract class Character : MonoBehaviour
 
     private void OnEnable()
     {
-        _health.Damaged += Bleed;
-        _health.Finished += Die;
+        _health.Damaged += OnBleed;
+        _health.Finished += OnDie;
     }
 
     private void OnDisable()
     {
-        _health.Damaged -= Bleed;
-        _health.Finished -= Die;
+        _health.Damaged -= OnBleed;
+        _health.Finished -= OnDie;
     }
 
     protected void InitCharacter()
@@ -29,12 +29,12 @@ public abstract class Character : MonoBehaviour
         _health.Init();
     }
 
-    private void Bleed()
+    private void OnBleed()
     {
         Instantiate(_blood, transform.position, Quaternion.identity);
     }
 
-    private void Die()
+    private void OnDie()
     {
         Destroy(gameObject);
     }

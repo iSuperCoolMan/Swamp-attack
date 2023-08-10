@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Zombie))]
 public class WaitAfterAttackTransition : Transition
 {
     private float _attackSpeed;

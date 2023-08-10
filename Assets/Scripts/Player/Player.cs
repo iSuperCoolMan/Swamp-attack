@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(PlayerAttack))]
 public class Player : Character
 {
     [SerializeField] private Wallet _wallet;

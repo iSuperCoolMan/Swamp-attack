@@ -16,7 +16,7 @@ MonoBehaviour:
   _attackSpeed: 0.5
   _projectilesPerShot: 1
   _spread: 2
-  _icon: {fileID: 21300000, guid: 0bcfe4ccb0193f04a985b1ae4535e9b6, type: 3}
+  _icon: {fileID: 21300000, guid: 33e994a121629d04581b11337ec52bca, type: 3}
   _name: "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u0430\u044F \u0430\u0442\u0430\u043A\u0430"
   _description: "\u0415\u0441\u043B\u0438 \u043D\u0443\u0436\u043D\u043E \u0431\u044B\u0441\u0442\u0440\u043E
     \u0441\u043F\u0440\u0430\u0432\u0438\u0442\u044C\u0441\u044F \u0441 \u043E\u0434\u043D\u0438\u043C
